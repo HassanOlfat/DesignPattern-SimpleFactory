@@ -7,12 +7,19 @@ namespace DesignPattern_SimpleFactory
         static void Main(string[] args)
         {
             ICar car = null;
-            string carname = Console.ReadLine().ToLower();
-            if (carname == "volvo")
-                car = CarFactory.GetCar(Carsname.Volvo);
-            else if (carname == "benz")
-                car = CarFactory.GetCar(Carsname.Benz);
-            Console.WriteLine(car.GetCarPrice());
+            string carname = Console.ReadLine()?.ToLower();
+            switch (carname)
+            {
+                case "volvo":
+                    car = CarFactory.GetCar(Carsname.Volvo);
+                    break;
+                case "benz":
+                    car = CarFactory.GetCar(Carsname.Benz);
+                    break;
+            }
+
+            if (car != null) Console.WriteLine(car.GetCarPrice());
+            Console.ReadKey();
         }
     }
 }
