@@ -4,12 +4,33 @@ using System.Text;
 
 namespace DesignPattern_SimpleFactory
 {
-    interface ICar
+    public interface ICar
     {
         string GetCarPrice();
     }
-  
 
+    public abstract class CarFactory
+    {
+        public static ICar GetCar(Carsname carName)
+        {
+            switch (carName)
+            {
+                case Carsname.Volvo:
+                {
+                    return new Volvo();
+                    break;
+                }
+                case Carsname.Benz:
+                {
+                    return new Benz();
+                    break;
+                }
+                default:
+                    return null;
+               
+            }
+        }
+    }
     class Volvo : ICar
     {
         public string GetCarPrice()

@@ -1,6 +1,6 @@
 ﻿namespace DesignPattern_SimpleFactory
 {
-    enum Carsname
+    public enum Carsname
     {
         Volvo ,
         Benz
