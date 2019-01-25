@@ -18,12 +18,10 @@ namespace DesignPattern_SimpleFactory
                 case Carsname.Volvo:
                 {
                     return new Volvo();
-                    break;
                 }
                 case Carsname.Benz:
                 {
                     return new Benz();
-                    break;
                 }
                 default:
                     return null;
